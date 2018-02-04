@@ -1,4 +1,4 @@
-from wit import wit
+from wit import Wit
 
 access_token = "7VQGABSTV4CNR77DPDLH2FVSIK7ZMTOY"
 
