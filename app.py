@@ -7,10 +7,10 @@ app = Flask(__name__)
 @app.route('/<path:path>')
 def verify():
     # Webhook verification
-    if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.challenge"):
-        if not request.args.get("hub.verification.token") == "hello":
-            return "Verification token mismatch", 403
-        return request.args["hub.challenge"], 200
+   # if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.challenge"):
+        # if not request.args.get("hub.verification.token") == "hello":
+           # return "Verification token mismatch", 403
+        # return request.args["hub.challenge"], 200
     return "Hello World", 200
 
 #@app.route('/', methods=['POST'])
