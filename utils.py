@@ -13,8 +13,8 @@ def wit_response(message_text):
     try:
         entity = list(resp['entities'])[0]
         value = resp['entities']['entity'][0]['value']
-    except
+    except:
         pass
     return (entity, value)
 #print(resp)
-#print(wit_response('I like cool places'))
+print(wit_response('I like cool places'))
