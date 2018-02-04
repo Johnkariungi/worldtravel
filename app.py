@@ -4,7 +4,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-@app.route('/<path:path>')
+#@app.route('/<path:path>')
 def verify():
     # Webhook verification
     if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.challenge"):
@@ -13,14 +13,16 @@ def verify():
         return request.args["hub.challenge"], 200
     return "Hello World", 200
 
-#@app.route('/', methods=['POST'])
-#def Webhook():
-    #data = request.get_json()
-    #log(data)
-#def log(message):
-    #print(message)
-    #sys.stdout.flush()
-    #return "ok", 200
+@app.route('/', methods=['POST'])
+def Webhook():
+    data = request.get_json()
+    log(data)
+    return "ok", 200
+    
+def log(message):
+    print(message)
+    sys.stdout.flush()
+    
 
 if __name__ == "__main__" :
    # IP
