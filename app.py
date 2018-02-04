@@ -25,7 +25,7 @@ def Webhook():
 
     if data['object'] == 'page':
         for entry in data['entry']:
-            for messaging_event in entry['messaging']
+            for messaging_event in entry['messaging']:
                 # ID
                 sender_id = messaging_event['sender']['id']
 				recipient_id = messaging_event['recipient']['id']
