@@ -47,8 +47,9 @@ def Webhook():
 
                         entity, value = wit_response(messaging_text)
 
-                        print(entity)
-                        
+                            print(entity)
+                            print(value)
+
                         if entity == "places":
                             response = "Ok, I will send you {} cool places.".format(str(value))
                         elif entity == "recreation":
