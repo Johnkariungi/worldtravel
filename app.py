@@ -31,8 +31,8 @@ def Webhook():
             for messaging_event in entry['messaging']:
                 print(messaging_event)
 				# IDs
-                        sender_id = messaging_event['sender']['id']
-                        recipient_id = messaging_event['recipient']['id']
+                    sender_id = messaging_event['sender']['id']
+                    recipient_id = messaging_event['recipient']['id']
 
                     if messaging_event.get('message'):
                         # Extracting text message
@@ -46,10 +46,7 @@ def Webhook():
                         response = None
 
                         entity, value = wit_response(messaging_text)
-
-                            print(entity)
-                            print(value)
-
+                        print(entity)
                         if entity == "places":
                             response = "Ok, I will send you {} cool places.".format(str(value))
                         elif entity == "recreation":
