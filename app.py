@@ -12,6 +12,15 @@ def verify():
         return request.args["hub.challenge"], 200
     return "Hello World", 200
 
+@app.route('/', methods=['POST'])
+def Webhook():
+    data = request.get_json()
+    log(data)
+def log(message):
+    print(message)
+    sys.stdout.flush()
+    return "ok", 200
+
 if __name__ == "__main__" :
    # IP
     response = requests.get('https://httpbin.org/ip')
