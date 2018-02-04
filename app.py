@@ -28,11 +28,11 @@ def Webhook():
             for messaging_event in entry['messaging']:
                 # ID
                 sender_id = messaging_event['sender']['id']
-				#recipient_id = messaging_event['recipient']['id']
+				    recipient_id = messaging_event['recipient']['id']
 
                 if messaging_event.get('message'):
 					# Extracting text message
-					if 'text' in messaging_event['message']:
+                    if 'text' in messaging_event['message']:
 						messaging_text = messaging_event['message']['text']
 					else:
 						messaging_text = 'no text'
