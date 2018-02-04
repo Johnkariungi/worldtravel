@@ -48,7 +48,7 @@ def Webhook():
 
                         if entity == "places":
                             response = "Ok, I will send you {} cool places.".format(str(value))
-                         elif entity == "recreation":
+                        elif entity == "recreation":
                             response = "Ok, so you would like to recreation to {0}, I will send you cool places from {0}".format(str(value))
                         elif entity == "eat":
                             response = "Ok, so you would like to eat to {0}, I will send you cool places from {0}".format(str(value))
