@@ -49,6 +49,8 @@ def Webhook():
                             response = "Ok, I will send you {} cool places.".formart(str(value))
                         elif entity == "location":
                             response = "Ok, so you would like to travel to {0}, I will send you cool places from {0}".formart(str(value))
+                        if response == None:
+                            response = "Please try again, thank you!"
 
                         bot.send_text_message(sender_id, response)
 
