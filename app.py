@@ -50,19 +50,19 @@ def Webhook():
                     if entity == "places":
                         response = "Ok, I will send you {} cool places.".format(str(value))
                     elif entity == "recreation":
-                        response = "Ok, so you would like to recreation to {0}, I will send you cool places from {0}".format(str(value))
+                        response = "Ok, so you would like to recreation to {0}, I will send you cool recreation from {0}".format(str(value))
                     elif entity == "eat":
-                        response = "Ok, so you would like to eat to {0}, I will send you cool places from {0}".format(str(value))
+                        response = "Ok, so you would like to eat to {0}, I will send you cool eating from {0}".format(str(value))
                     elif entity == "walk":
-                        response = "Ok, so you would like to walk to {0}, I will send you cool places from {0}".format(str(value))
+                        response = "Ok, so you would like to walk to {0}, I will send you cool walking from {0}".format(str(value))
                     elif entity == "shop":
-                        response = "Ok, so you would like to shop to {0}, I will send you cool places from {0}".format(str(value))
+                        response = "Ok, so you would like to shop to {0}, I will send you cool shopping from {0}".format(str(value))
                     elif entity == "hike":
-                        response = "Ok, so you would like to hike to {0}, I will send you cool places from {0}".format(str(value))
+                        response = "Ok, so you would like to hike to {0}, I will send you cool hiking from {0}".format(str(value))
                     elif entity == "entertainment":
-                        response = "Ok, so you would like to entertainment to {0}, I will send you cool places from {0}".format(str(value))
+                        response = "Ok, so you would like to entertainment to {0}, I will send you cool entertainment from {0}".format(str(value))
                     elif entity == "location":
-                        response = "Ok, so you would like to travel to {0}, I will send you cool places from {0}".format(str(value))
+                        response = "Ok, so you would like to travel to {0}, I will send you cool locations from {0}".format(str(value))
                     if response == None:
                         response = "Please try again, thank you!"
                     print(messaging_text)
