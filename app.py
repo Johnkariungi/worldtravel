@@ -9,15 +9,15 @@ PAGE_ACCESS_TOKEN = "EAADHBIbZCiLYBAE0HqEsFft7WtKE513RyuK5NKD2ip62BgoI2bZBr19xoH
 
 bot = Bot(PAGE_ACCESS_TOKEN)
 
-@app.route('/', methods=['GET'])
-@app.route('/<path:path>')
-def verify():
-    # Webhook verification
-    if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.challenge"):
-        if not request.args.get("hub.verify_token") == "hello":
-            return "Verification token mismatch", 403
-        return request.args["hub.challenge"], 200
-    return "Hello World", 200
+# @app.route('/', methods=['GET'])
+# @app.route('/<path:path>')
+# def verify():
+#     # Webhook verification
+#     if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.challenge"):
+#         if not request.args.get("hub.verify_token") == "hello":
+#             return "Verification token mismatch", 403
+#         return request.args["hub.challenge"], 200
+#     return "Hello World", 200
 
 @app.route('/', methods=['POST'])
 def Webhook():
