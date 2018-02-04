@@ -23,6 +23,6 @@ def log(message):
 
 if __name__ == "__main__" :
    # IP
-    response = requests.get('https://httpbin.org/ip')
-    print('Your IP is {0}'.format(response.json()['origin']))
+    #response = requests.get('https://httpbin.org/ip')
+    #print('Your IP is {0}'.format(response.json()['origin']))
     app.run(debug = True, port = 80)
