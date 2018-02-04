@@ -65,7 +65,7 @@ def Webhook():
                             response = "Ok, so you would like to travel to {0}, I will send you cool places from {0}".format(str(value))
                         if response == None:
                             response = "Please try again, thank you!"
-
+                        print(messaging_text)
                         bot.send_text_message(sender_id, response)
 
             return "ok", 200
