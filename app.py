@@ -1,12 +1,12 @@
 import os, sys, requests
 from flask import Flask, request
-#from pymessenger.bot import Bot
+from pymessenger.bot import Bot
 
 app = Flask(__name__)
 
-#PAGE_ACCESS_TOKEN = "EAADHBIbZCiLYBAE0HqEsFft7WtKE513RyuK5NKD2ip62BgoI2bZBr19xoHCvmvFSGrFZBgmGAVNDNZBUbgelEg8d0l82furg9V3xDmL9LRZAJtfyviBJLU756T4uSKfb4B9WhtTxGg4WdFOHZA1sQ1ZAFgJwGVo8jzO0ssjVSb24AZDZD"
+PAGE_ACCESS_TOKEN = "EAADHBIbZCiLYBAE0HqEsFft7WtKE513RyuK5NKD2ip62BgoI2bZBr19xoHCvmvFSGrFZBgmGAVNDNZBUbgelEg8d0l82furg9V3xDmL9LRZAJtfyviBJLU756T4uSKfb4B9WhtTxGg4WdFOHZA1sQ1ZAFgJwGVo8jzO0ssjVSb24AZDZD"
 
-#bot = Bot(PAGE_ACCESS_TOKEN)
+bot = Bot(PAGE_ACCESS_TOKEN)
 
 @app.route('/', methods=['GET'])
 @app.route('/<path:path>')
