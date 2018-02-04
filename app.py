@@ -34,41 +34,41 @@ def Webhook():
                 sender_id = messaging_event['sender']['id']
                 recipient_id = messaging_event['recipient']['id']
 
-                    if messaging_event.get('message'):
-                        # Extracting text message
-                        if 'text' in messaging_event['message']:
-                            messaging_text = messaging_event['message']['text']
-                        else:
-                            messaging_text = 'no text'
+                if messaging_event.get('message'):
+                    # Extracting text message
+                    if 'text' in messaging_event['message']:
+                        messaging_text = messaging_event['message']['text']
+                    else:
+                        messaging_text = 'no text'
 
-                        # Echo
-                        #response = messaging_text
-                        response = None
+                    # Echo
+                    #response = messaging_text
+                    response = None
 
-                        entity, value = wit_response(messaging_text)
-                        #print(entity)
-                        if entity == "places":
-                            response = "Ok, I will send you {} cool places.".format(str(value))
-                        elif entity == "recreation":
-                            response = "Ok, so you would like to recreation to {0}, I will send you cool places from {0}".format(str(value))
-                        elif entity == "eat":
-                            response = "Ok, so you would like to eat to {0}, I will send you cool places from {0}".format(str(value))
-                        elif entity == "walk":
-                            response = "Ok, so you would like to walk to {0}, I will send you cool places from {0}".format(str(value))
-                        elif entity == "shop":
-                            response = "Ok, so you would like to shop to {0}, I will send you cool places from {0}".format(str(value))
-                        elif entity == "hike":
-                            response = "Ok, so you would like to hike to {0}, I will send you cool places from {0}".format(str(value))
-                        elif entity == "entertainment":
-                            response = "Ok, so you would like to entertainment to {0}, I will send you cool places from {0}".format(str(value))
-                        elif entity == "location":
-                            response = "Ok, so you would like to travel to {0}, I will send you cool places from {0}".format(str(value))
-                        if response == None:
-                            response = "Please try again, thank you!"
-                        print(messaging_text)
-                        bot.send_text_message(sender_id, response)
+                    entity, value = wit_response(messaging_text)
+                    #print(entity)
+                    if entity == "places":
+                        response = "Ok, I will send you {} cool places.".format(str(value))
+                    elif entity == "recreation":
+                        response = "Ok, so you would like to recreation to {0}, I will send you cool places from {0}".format(str(value))
+                    elif entity == "eat":
+                        response = "Ok, so you would like to eat to {0}, I will send you cool places from {0}".format(str(value))
+                    elif entity == "walk":
+                        response = "Ok, so you would like to walk to {0}, I will send you cool places from {0}".format(str(value))
+                    elif entity == "shop":
+                        response = "Ok, so you would like to shop to {0}, I will send you cool places from {0}".format(str(value))
+                    elif entity == "hike":
+                        response = "Ok, so you would like to hike to {0}, I will send you cool places from {0}".format(str(value))
+                    elif entity == "entertainment":
+                        response = "Ok, so you would like to entertainment to {0}, I will send you cool places from {0}".format(str(value))
+                    elif entity == "location":
+                        response = "Ok, so you would like to travel to {0}, I will send you cool places from {0}".format(str(value))
+                    if response == None:
+                        response = "Please try again, thank you!"
+                    print(messaging_text)
+                    bot.send_text_message(sender_id, response)
 
-            return "ok", 200
+        return "ok", 200
 
 def log(message):
     print(message)
