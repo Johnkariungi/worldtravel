@@ -1,6 +1,6 @@
 import os, sys, requests
 from flask import Flask, request
-from pymessenger import bot
+from pymessenger.bot import Bot
 
 app = Flask(__name__)
 
@@ -9,7 +9,7 @@ PAGE_ACCESS_TOKEN = "EAADHBIbZCiLYBAE0HqEsFft7WtKE513RyuK5NKD2ip62BgoI2bZBr19xoH
 bot = Bot(PAGE_ACCESS_TOKEN)
 
 @app.route('/', methods=['GET'])
-#@app.route('/<path:path>')
+@app.route('/<path:path>')
 def verify():
     # Webhook verification
     if request.args.get("hub.mode") == "subscribe" and request.args.get("hub.challenge"):
