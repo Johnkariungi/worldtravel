@@ -21,6 +21,7 @@ def verify():
 
 @app.route('/', methods=['POST'])
 def Webhook():
+    print("Got to post!")
     data = request.get_json()
     log(data)
 
