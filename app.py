@@ -17,7 +17,7 @@ def Webhook():
     data = request.get_json()
     log(data)
 def log(message):
-    print(message)
+    #print(message)
     sys.stdout.flush()
     return "ok", 200
 
