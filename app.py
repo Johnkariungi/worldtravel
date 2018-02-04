@@ -19,12 +19,13 @@ bot = Bot(PAGE_ACCESS_TOKEN)
 #         return request.args["hub.challenge"], 200
 #     return "Hello World", 200
 
+
 @app.route('/', methods=['POST'])
 def Webhook():
     print("Got to post!")
     data = request.get_json()
     log(data)
-    print(request)
+    print(data)
     if data['object'] == 'page':
         for entry in data['entry']:
             for messaging_event in entry['messaging']:
