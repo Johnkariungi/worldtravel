@@ -14,7 +14,7 @@ def wit_response(message_text):
         entity = list(resp['entities'])[0]
         value = resp['entities']['entity'][0]['value']
     except Exception as e:
-        print(e.message)
+        print(e)
     return (entity, value)
 #print(resp)
 print(wit_response('I like cool places'))
