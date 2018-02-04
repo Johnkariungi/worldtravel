@@ -1,5 +1,6 @@
 import os, sys, requests
 from flask import Flask, request
+from utils import wit_response
 from pymessenger.bot import Bot
 
 app = Flask(__name__)
@@ -39,7 +40,16 @@ def Webhook():
                             messaging_text = 'no text'
 
                         # Echo
-                        response = messaging_text
+                        #response = messaging_text
+                        response = None
+
+                        entity, value = wit_response(messaging_text)
+
+                        if entity == "places"
+                            response = "Ok, I will send you {} cool places.".formart(str(value))
+                        elif entity == "location":
+                            response = "Ok, so you would like to travel to {0}, I will send you cool places from {0}".formart(str(value))
+
                         bot.send_text_message(sender_id, response)
 
             return "ok", 200
